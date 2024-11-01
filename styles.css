@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+  
+  /*#########################################
+  ###########################################
+  ########### PROJECT STARTS HERE ######## */
+  :root {
+    /* Primary */
+    --blue: hsl(223, 87%, 63%);
+
+    /* Secondary */
+    --pale-blue: hsl(223, 100%, 88%);
+    --light-red: hsl(354, 100%, 66%);
+
+    /* Neutral */
+    --gray: hsl(0, 0%, 59%);
+    --very-dark-blue: hsl(209, 33%, 12%);
+}
+
+body{
+    min-height: 100vh;
+
+    font-size: 20px;
+    font-family: 'Libre Franklin', Arial, Helvetica, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    padding: 7rem 2rem 2rem 2rem;
+
+    max-width: 700px;
+}
+
+.text-box{
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.text-box h1{
+    color: var(--gray);
+    font-weight: 100;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.text-box span{
+    color: var(--very-dark-blue);
+    font-weight: 700;
+}
+
+.text-box p{
+    color: var(--very-dark-blue);
+    text-align: center;
+    font-weight: 300;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .7rem;
+
+    /* border: 3px red solid; */
+    width: 100%;
+}
+
+ input{
+    width: 100%;
+    border-radius:  4rem;
+    border: 1px solid rgb(173, 172, 172);
+    padding: .6rem;
+}
+
+span input::placeholder{
+    color: var(--gray);
+    font-size: 1rem;
+    font-weight: 100;
+    padding-left: 1rem;
+}
+
+form button{
+
+    width: 100%;
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius:  4rem;
+    padding: .8rem;
+    font-size: 1rem;
+    font-weight: 550;
+}
+
+form button:hover{
+  cursor: pointer;
+  background-color: rgba(64, 172, 245, 0.993);
+  transform: scale(1.01);
+}
+
+form span{
+  width: 100%;
+  text-align: center;
+}
+
+.img-box{
+    padding-top: 2.5rem;
+}
+
+.end-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 7rem;
+}
+
+.end-box p{
+    color: var(--gray);
+    font-size: .8rem;
+}
+
+.socials{
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.socials svg{
+    width: 100%;
+    fill: var(--blue);
+}
+
+.fb,
+.x,
+.ig{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* border: 1px rgb(194, 191, 191) solid;
+    border-radius: 50%; */
+    width: 40px;
+    height: 40px;
+
+    padding: .4rem;
+}
+
+.fb:hover,
+.x:hover,
+.ig:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+span #error-msg{
+  color: red;
+  font-size: .9rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  margin-top: .5rem;
+  display: none;
+}
+
+@media (max-width: 399px){
+  .text-box h1{
+    font-size: 1.5rem;
+  }
+
+  .text-box p{
+    font-size: 1rem;
+  }  
+}
+
+@media (min-width: 600px){
+  .text-box h1{
+    font-size: 3rem;
+  }
+
+  .text-box p{
+    font-size: 1.2rem;
+  }
+
+  form{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+  }
+
+  form button{
+    width: 40%;
+    align-self: flex-start;
+  } 
+
+  form input{
+    width: 100%;
+  }
+
+  form span #error-msg{
+    color: red;
+    font-size: .9rem;
+    font-style: italic;
+    margin-top: .7rem;
+    padding-left: 2rem;
+    display: none;
+    text-align: left;
+  }
+
+  form span #mail{
+    padding-left: 2rem;
+  }
+
+
+  /* form{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+*/
+}
+  
